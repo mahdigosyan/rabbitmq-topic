@@ -8,6 +8,7 @@ const receiveData = async () => {
     const channel = await connection.createChannel();
     await channel.assertExchange(exchangeName, "topic");
     const assertedQueue = await channel.assertQueue('', {exclusive: true});
+    
     for (const pattern of logTypes) {
         channel.bindQueue(assertedQueue.queue, exchangeName, pattern);
     }
