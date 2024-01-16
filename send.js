@@ -12,4 +12,5 @@ const sendData = async () => {
         process.exit(0)
     })
 }
-sendData()
+sendData();
+
